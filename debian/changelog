@@ -1,3 +1,141 @@
+live-config (5.20160608) unstable; urgency=medium
+
+  * Team upload.
+  * Replace components/0170-systemd with a systemd generator so that
+    we don't reload systemd in the middle of the boot sequence. This
+    really fixes the boot delay experienced with systemd 230.
+  * Improve ordering of live-config.service so that it runs after the
+    local filesystems have been mounted.
+  * Rely on dh_systemd_enable to enable the service instead of shipping
+    a basic.target.wants/live-config.service symlink in the package.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Wed, 08 Jun 2016 12:38:58 +0200
+
+live-config (5.20160607) unstable; urgency=medium
+
+  * Team upload.
+  * No longer manually start the getty@* services. There is systemd-logind
+    already taking care of this at runtime when the user switches to the
+    corresponding VT. Furthermore systemd-logind is smarter since it will
+    avoid running it on an already used VT (such as vt1 which is nowadays
+    used by gdm3). This also gets rid of the undesirable boot delay that
+    was likely introduced by one of the above conflicts.
+  * Make live-config-systemd the default backend.
+  * Properly handle hwclock set to local time. Closes: #824197
+    Thanks to Tom Jampen <tom@cryptography.ch> for the patch.
+  * Fix timezone configuration by dropping /etc/localtime so that
+    tzdata config script is forced to recreate it from /etc/timezone.
+    Closes: #816201 Thanks to Gregory DAVID <groolot@groolot.net> for
+    the analysis.
+  * Also look for live/config.conf in /lib/live/mount/persistence/*/
+    Closes: #817831 Thanks to Gregory DAVID <groolot@groolot.net>
+    for the patch.
+  * Automatically export variables set in live-config configuration
+    files so that components inherit from them. Closes: #799359
+    Thanks to Lukas Schwaighofer <lukas@schwaighofer.name> for the patch.
+  * Drop override and options for XZ compression, it has been the default for
+    a while.
+  * Bump Standards-Version to 3.9.8.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Tue, 07 Jun 2016 16:30:13 +0200
+
+live-config (5.20151121) unstable; urgency=medium
+
+  [ Iain R. Learmonth ]
+
+  * debian/source/format:
+   - Changed to "3.0 (native)"
+  * debian/control:
+   - Added myself to uploaders
+   - Updated Vcs-* fields
+   - Updated Homepage field
+
+  [ Raphaël Hertzog ]
+
+  * Added --no-block to systemd script (Closes: #802223)
+
+  [ trebmuh ]
+
+  * Updated French translation of man pages
+
+  [ Daniel Reichelt ]
+
+  * Fixed hook for disabling display managers
+  * Fixed naming of config snippets in manpages
+
+ -- Iain R. Learmonth <irl@debian.org>  Sat, 21 Nov 2015 17:59:07 +0000
+
+live-config (5.0~a5-2) unstable; urgency=low
+
+  * Removing myself from uploaders, lost trust in Debian (#804315).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Fri, 20 Nov 2015 13:04:24 +0100
+
+live-config (5.0~a5-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Dropping baudrate from agetty call in systemd component to use the
+    same options as the normal system does.
+  * Renumbering systemd and sysv-rc components.
+  * Don't clear the terminal in systemd component if live-config.debug
+    boot parameter is used.
+  * Adding systemd component in manpage.
+
+  [ Carlos Zuferri ]
+  * Updating Spanish translation of manpage.
+  * Updating French translation of manpage.
+  * Updating Italian translation of manpage.
+
+  [ victory ]
+  * Sync Japanese translation.
+  * Updating copyright notices for 2015.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 23 Aug 2015 10:59:56 +0200
+
+live-config (5.0~a4-1) unstable; urgency=low
+
+  * Wrap and sort debian control file.
+  * Using the common and intuitive way of live/config.conf.d/*.conf as
+    includes for config snippets consistently (Closes: #791670).
+  * Adding slightly adjusted systemd component from Daniel Gollub
+    <dgollub@brocade.com>.
+  * Removing generated live-config_autoconfig.conf files from systemd
+    component in postrm script.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 20 Aug 2015 11:41:02 +0200
+
+live-config (5.0~a3-1) unstable; urgency=low
+
+  * Making noroot bootparameter selfcontained within components.
+  * Making noautologin bootparameter selfcontained within components.
+  * Making nox11autologin bootparameter selfcontained within components.
+  * Making nottyautologin bootparameter selfcontained within components.
+  * Fixing kdm component to be selfcontained.
+  * Fixing sysvinit component to be selfcontained.
+  * Removing hack to configure sysvinit to not mount /tmp as tmpfs, this
+    is done at build time now through live-build.
+  * Also recreating ed25519 hostkeys in openssh-server component, now that
+    we only support jessie and newer here.
+  * Dropping obsolete ubuntu support, no special treatment necessary
+    anymore.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 04 May 2015 20:06:12 +0200
+
+live-config (5.0~a2-1) unstable; urgency=low
+
+  * Updating year to 2015.
+  * Updating live-config version to 5 in live-config-foobar example
+    packaging.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 26 Apr 2015 20:32:07 +0200
+
+live-config (5.0~a1-1) experimental; urgency=low
+
+  * Dropping debian-installer-launcher component, not needed for current
+    desktops anymore.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 25 Jan 2015 10:17:56 +0100
+
 live-config (4.0.4-1) unstable; urgency=low
 
   * Adding dbus to recommends for systemd backend.

@@ -2,20 +2,28 @@
 
 ## live-config(7) - System Configuration Components
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
+## Copyright (C) 2016 Raphael Hertzog <hertzog@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
 ## under certain conditions; see COPYING for details.
 
+set -e
 
-#set -e
+SYSTEMD_DIR=$1
+
+. /lib/live/init-config.sh
 
 Cmdline ()
 {
 	# Reading kernel command line
-	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	for _PARAMETER in $(cat /proc/cmdline)
 	do
 		case "${_PARAMETER}" in
+			live-config.debug|debug)
+				LIVE_CONFIG_DEBUG="true"
+				;;
+
 			live-config.noautologin|noautologin)
 				LIVE_CONFIG_NOAUTOLOGIN="true"
 				;;
@@ -33,6 +41,12 @@ Cmdline ()
 
 Init ()
 {
+	# Do nothing if not booted in live mode
+	if ! grep -q "boot=live" /proc/cmdline
+	then
+		exit 0
+	fi
+
 	# Disables both console and graphical autologin.
 	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
 		true)
@@ -47,14 +61,11 @@ Init ()
 			;;
 	esac
 
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/sysvinit.list ] || \
-	   [ -e /var/lib/live/config/sysvinit ]
+	# Check if configuration already happened
+	if [ -e $SYSTEMD_DIR/getty@tty1.service.d/live-config_autologin.conf ]
 	then
 		exit 0
 	fi
-
-	echo -n " sysvinit"
 }
 
 Config ()
@@ -62,15 +73,29 @@ Config ()
 	# Configure autologin
 	if [ -n "${LIVE_USERNAME}" ]
 	then
-		sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(ttyS\?[0-9]*\).*$|\1:/bin/login -f ${LIVE_USERNAME} </dev/\2 >/dev/\2 2>\&1|" /etc/inittab
+		for NUMBER in $(seq 1 6)
+		do
+			GETTY_SERVICE_D=$SYSTEMD_DIR/getty@tty${NUMBER}.service.d
+			CONF=$GETTY_SERVICE_D/live-config_autologin.conf
+			mkdir -p $GETTY_SERVICE_D
 
-		init q
+			cat > $CONF << EOF
+[Service]
+Type=idle
+ExecStart=
+ExecStart=-/sbin/agetty --autologin ${LIVE_USERNAME} --noclear %I \$TERM
+EOF
+
+			if [ "${LIVE_CONFIG_DEBUG}" = "true" ]
+			then
+				echo "TTYVTDisallocate=no" >> $CONF
+			fi
+		done
 	fi
-
-	# Creating state file
-	touch /var/lib/live/config/sysvinit
 }
 
 Cmdline
 Init
 Config
+
+exit 0

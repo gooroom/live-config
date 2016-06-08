@@ -18,15 +18,11 @@ override_dh_auto_install:
 	rm -f debian/tmp/usr/share/doc/live-config/COPYING
 	frontend/live-config-update debian/tmp
 
-override_dh_builddeb:
-	dh_builddeb -- -Zxz
-
 override_dh_compress:
 	dh_compress -Xusr/share/doc/live-config/examples
 
 override_dh_install:
 	dh_install --fail-missing
-	chmod 755 debian/live-config/lib/live/config/1180-installer-icon
 
 override_dh_installinit:
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
