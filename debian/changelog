@@ -1,15 +1,17 @@
-live-config (5.20160608+grm1) unstable; urgency=medium
+live-config (5.20170112) unstable; urgency=medium
 
-  [ Raphaël Hertzog ]
-  * [bbaca457] Imported Debian version 5.20160608
+  * Team upload.
+  * Don't force the vboxvideo Xorg driver when virtualbox-guest-x11 is
+    installed. It's harmful when we use the kernel driver. Closes: #831384
+    Thanks to intrigeri and Rohan Garg.
+  * Use dbus-run-session instead of dbus-launch to run gsettings. Thanks
+    to Simon McVittie for the report. Closes: #836102 
+  * Support xorg-driver=noproprietary to not override Xorg's auto-detection
+    of the driver (live-config does that by default for cards supported by the
+    fglrx/nvidia drivers if they are installed). Thanks to Wolfgang Scheicher
+    for the initial patch. Closes: #808732
 
-  [ jongkyung.woo ]
-  * [577b65c3] Import gooroom platforom patches based on version 5.20160608
-  * [9a884216] set a timezone to Asia/Seoul in 0070-tzdata
-
-  [ Gooroom Autobuilder ]
-
- -- Gooroom Autobuilder <jenkins@gooroom.kr>  Wed, 08 Feb 2017 12:41:56 +0900
+ -- Raphaël Hertzog <hertzog@debian.org>  Thu, 12 Jan 2017 18:11:22 +0100
 
 live-config (5.20160608) unstable; urgency=medium
 
