@@ -1,3 +1,16 @@
+live-config (5.20160608+grm1) unstable; urgency=medium
+
+  [ Raphaël Hertzog ]
+  * [bbaca457] Imported Debian version 5.20160608
+
+  [ jongkyung.woo ]
+  * [577b65c3] Import gooroom platforom patches based on version 5.20160608
+  * [9a884216] set a timezone to Asia/Seoul in 0070-tzdata
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Wed, 08 Feb 2017 12:41:56 +0900
+
 live-config (5.20160608) unstable; urgency=medium
 
   * Team upload.
