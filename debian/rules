@@ -23,6 +23,7 @@ override_dh_compress:
 
 override_dh_install:
 	dh_install --fail-missing
+	chmod 755 debian/live-config/lib/live/config/1180-installer-icon
 
 override_dh_installinit:
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts

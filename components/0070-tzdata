@@ -42,8 +42,8 @@ Config ()
 		_AREA="$(echo ${LIVE_TIMEZONE} | cut -f1 -d '/')"
 		_ZONE="$(echo ${LIVE_TIMEZONE} | cut -f2 -d '/')"
 	else
-		_AREA="Etc"
-		_ZONE="UTC"
+		_AREA="Asia"
+		_ZONE="Seoul"
 	fi
 
 	echo "${_AREA}/${_ZONE}" > /etc/timezone
