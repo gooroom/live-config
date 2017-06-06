@@ -36,7 +36,7 @@ case "${_DISTRIBUTION}" in
 		NOCOMPONENT="apport"
 
 		LIVE_HOSTNAME="gooroom"
-		LIVE_USERNAME="user"
+		LIVE_USERNAME="gooroom"
 		LIVE_USER_FULLNAME="Gooroom Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 
@@ -47,7 +47,7 @@ case "${_DISTRIBUTION}" in
 		NOCOMPONENT="apport"
 
 		LIVE_HOSTNAME="system"
-		LIVE_USERNAME="user"
+		LIVE_USERNAME="gooroom"
 		LIVE_USER_FULLNAME="Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
 
