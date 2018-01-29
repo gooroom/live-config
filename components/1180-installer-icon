@@ -11,12 +11,24 @@
 Installer_icon()
 {
     if [ -e /usr/share/applications/debian-installer-launcher.desktop ]; then
-        if [ ! -e /home/${LIVE_USERNAME}/Desktop ]; then
-            mkdir -p /home/${LIVE_USERNAME}/Desktop
+        if grep -qs ko_KR /etc/default/locale
+        then
+            if [ ! -e /home/${LIVE_USERNAME}/바탕화면 ]; then
+                mkdir -p /home/${LIVE_USERNAME}/바탕화면
+            fi
+
+            cp /usr/share/applications/debian-installer-launcher.desktop /home/${LIVE_USERNAME}/바탕화면/debian-installer-launcher.desktop
+            chmod 755 /home/${LIVE_USERNAME}/바탕화면/debian-installer-launcher.desktop
+            chown ${LIVE_USERNAME}:${LIVE_USERNAME} "/home/${LIVE_USERNAME}/바탕화면" -R
+        else
+            if [ ! -e /home/${LIVE_USERNAME}/Desktop ]; then
+                mkdir -p /home/${LIVE_USERNAME}/Desktop
+            fi
+
+            cp /usr/share/applications/debian-installer-launcher.desktop /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
+            chmod 755 /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
+            chown ${LIVE_USERNAME}:${LIVE_USERNAME} "/home/${LIVE_USERNAME}/Desktop" -R
         fi
-        cp /usr/share/applications/debian-installer-launcher.desktop /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
-        chmod 755 /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
-        chown ${LIVE_USERNAME}:${LIVE_USERNAME} "/home/${LIVE_USERNAME}/Desktop" -R
     fi
 
     # Creating state file
