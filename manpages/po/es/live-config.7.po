@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config\n"
-"POT-Creation-Date: 2015-09-23 16:59+0200\n"
+"POT-Creation-Date: 2018-02-24 11:53+0100\n"
 "PO-Revision-Date: 2015-08-21 11:45+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -203,10 +203,15 @@ msgstr "B<live-config.debconf-preseed>=filesystem|medium|I<URL1>|I<URL2>| ... |I
 
 #. type: Plain text
 #: en/live-config.7:39
+#, fuzzy
+#| msgid ""
+#| "Allows to fetch and apply one or more debconf preseed files to be applied "
+#| "to the debconf database. Note that the URLs must be fetchable by wget "
+#| "(http, ftp or file://)."
 msgid ""
-"Allows to fetch and apply one or more debconf preseed files to be applied to "
-"the debconf database. Note that the URLs must be fetchable by wget (http, "
-"ftp or file://)."
+"Allows one to fetch and apply one or more debconf preseed files to be "
+"applied to the debconf database. Note that the URLs must be fetchable by "
+"wget (http, ftp or file://)."
 msgstr ""
 "Permite buscar y aplicar uno o más ficheros de preconfiguración debconf a la "
 "base de datos de debconf. Tener en cuenta que las URLs deben poder ser "
@@ -260,7 +265,9 @@ msgstr "B<live-config.hostname>=I<HOSTNAME> | B<hostname>=I<HOSTNAME>"
 
 #. type: Plain text
 #: en/live-config.7:49
-msgid "Allows to set the hostname of the system. The default is 'debian'."
+#, fuzzy
+#| msgid "Allows to set the hostname of the system. The default is 'debian'."
+msgid "Allows one to set the hostname of the system. The default is 'debian'."
 msgstr "Permite establecer el anfitrión del sistema. Por defecto es «debian»."
 
 #. type: IP
@@ -271,9 +278,13 @@ msgstr "B<live-config.username>=I<USERNAME> | B<username>=I<USERNAME>"
 
 #. type: Plain text
 #: en/live-config.7:51
+#, fuzzy
+#| msgid ""
+#| "Allows to set the username that gets created for autologin. The default "
+#| "is 'user'."
 msgid ""
-"Allows to set the username that gets created for autologin. The default is "
-"'user'."
+"Allows one to set the username that gets created for autologin. The default "
+"is 'user'."
 msgstr ""
 "Permite establecer el nombre del usuario que se crea para iniciar sesión de "
 "forma automática. Por defecto es «user»."
@@ -286,8 +297,13 @@ msgstr "B<live-config.user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn> | B
 
 #. type: Plain text
 #: en/live-config.7:53
+#, fuzzy
+#| msgid ""
+#| "Allows to set the default groups of the users that gets created for "
+#| "autologin is member of. The default is 'audio cdrom dip floppy video "
+#| "plugdev netdev powerdev scanner bluetooth'."
 msgid ""
-"Allows to set the default groups of the users that gets created for "
+"Allows one to set the default groups of the users that gets created for "
 "autologin is member of. The default is 'audio cdrom dip floppy video plugdev "
 "netdev powerdev scanner bluetooth'."
 msgstr ""
@@ -303,9 +319,13 @@ msgstr "B<live-config.user-fullname>=\"I<USER FULLNAME>\" | B<user-fullname>=\"I
 
 #. type: Plain text
 #: en/live-config.7:55
+#, fuzzy
+#| msgid ""
+#| "Allows to set the fullname of the users that gets created for autologin. "
+#| "On Debian the default is 'Debian Live user'."
 msgid ""
-"Allows to set the fullname of the users that gets created for autologin. On "
-"Debian the default is 'Debian Live user'."
+"Allows one to set the fullname of the users that gets created for autologin. "
+"On Debian the default is 'Debian Live user'."
 msgstr ""
 "Permite establecer el nombre completo del usuario que se crea para iniciar "
 "sesión de forma automática. Por defecto es «Debian Live user»."
@@ -318,10 +338,15 @@ msgstr "B<live-config.locales>=I<LOCALE1>,I<LOCALE2>·...·I<LOCALEn> | B<locale
 
 #. type: Plain text
 #: en/live-config.7:57
+#, fuzzy
+#| msgid ""
+#| "Allows to set the locale of the system, e.g. 'de_CH.UTF-8'. The default "
+#| "is 'en_US.UTF-8'. In case the selected locale is not already available on "
+#| "the system, it is automatically generated on the fly."
 msgid ""
-"Allows to set the locale of the system, e.g. 'de_CH.UTF-8'. The default is "
-"'en_US.UTF-8'. In case the selected locale is not already available on the "
-"system, it is automatically generated on the fly."
+"Allows one to set the locale of the system, e.g. 'de_CH.UTF-8'. The default "
+"is 'en_US.UTF-8'. In case the selected locale is not already available on "
+"the system, it is automatically generated on the fly."
 msgstr ""
 "Permite establecer las variantes locales del sistema, p.ej. «es_ES.UTF-8». "
 "Por defecto es «en_US.UTF-8». En caso de que las variantes locales no estén "
@@ -335,9 +360,13 @@ msgstr "B<live-config.timezone>=I<TIMEZONE> | B<timezone>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:59
+#, fuzzy
+#| msgid ""
+#| "Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The "
+#| "default is 'UTC'."
 msgid ""
-"Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default "
-"is 'UTC'."
+"Allows one to set the timezone of the system, e.g. 'Europe/Zurich'. The "
+"default is 'UTC'."
 msgstr ""
 "Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por "
 "defecto es «UTC»."
@@ -350,7 +379,9 @@ msgstr "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KE
 
 #. type: Plain text
 #: en/live-config.7:61
-msgid "Allows to change the keyboard model. There is no default value set."
+#, fuzzy
+#| msgid "Allows to change the keyboard model. There is no default value set."
+msgid "Allows one to change the keyboard model. There is no default value set."
 msgstr "Permite cambiar el modelo de teclado. No hay ningún valor por defecto."
 
 #. type: IP
@@ -361,10 +392,15 @@ msgstr "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> 
 
 #. type: Plain text
 #: en/live-config.7:63
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard layouts. If more than one is specified, the "
+#| "tools of the desktop environment will allow to switch it under X11. There "
+#| "is no default value set."
 msgid ""
-"Allows to change the keyboard layouts. If more than one is specified, the "
-"tools of the desktop environment will allow to switch it under X11. There is "
-"no default value set."
+"Allows one to change the keyboard layouts. If more than one is specified, "
+"the tools of the desktop environment will allow one to switch it under X11. "
+"There is no default value set."
 msgstr ""
 "Permite cambiar la disposición del teclado. Si se especifica más de una, las "
 "herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún "
@@ -378,12 +414,21 @@ msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT
 
 #. type: Plain text
 #: en/live-config.7:65
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard variants. If more than one is specified, "
+#| "the same number of values as keyboard-layouts values should be specified "
+#| "as they will be matched one-to-one in the order specified. Blank values "
+#| "are allowed. The tools of the desktop environment will allow to switch "
+#| "between each layout and variant pair under X11. There is no default value "
+#| "set."
 msgid ""
-"Allows to change the keyboard variants. If more than one is specified, the "
-"same number of values as keyboard-layouts values should be specified as they "
-"will be matched one-to-one in the order specified. Blank values are allowed. "
-"The tools of the desktop environment will allow to switch between each "
-"layout and variant pair under X11. There is no default value set."
+"Allows one to change the keyboard variants. If more than one is specified, "
+"the same number of values as keyboard-layouts values should be specified as "
+"they will be matched one-to-one in the order specified. Blank values are "
+"allowed. The tools of the desktop environment will allow one to switch "
+"between each layout and variant pair under X11. There is no default value "
+"set."
 msgstr ""
 "Permite cambiar las variantes de teclado. Si se especifica más de una, se "
 "deben especificar el mismo número de variantes como de distribuciones de "
@@ -399,7 +444,11 @@ msgstr "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS> | B<keyboard-options
 
 #. type: Plain text
 #: en/live-config.7:67
-msgid "Allows to change the keyboard options. There is no default value set."
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard options. There is no default value set."
+msgid ""
+"Allows one to change the keyboard options. There is no default value set."
 msgstr "Permite cambiar las opciones del teclado. No hay un valor por defecto."
 
 #. type: IP
@@ -410,7 +459,9 @@ msgstr "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-
 
 #. type: Plain text
 #: en/live-config.7:69
-msgid "Allows to disable sysv services through update-rc.d."
+#, fuzzy
+#| msgid "Allows to disable sysv services through update-rc.d."
+msgid "Allows one to disable sysv services through update-rc.d."
 msgstr "Permite desactivar los servicios «sysv» mediante «update-rc.d»."
 
 #. type: IP
@@ -421,9 +472,13 @@ msgstr "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
 
 #. type: Plain text
 #: en/live-config.7:71
+#, fuzzy
+#| msgid ""
+#| "Allows to change if the system is assuming that the hardware clock is set "
+#| "to UTC or not. The default is 'yes'."
 msgid ""
-"Allows to change if the system is assuming that the hardware clock is set to "
-"UTC or not. The default is 'yes'."
+"Allows one to change if the system is assuming that the hardware clock is "
+"set to UTC or not. The default is 'yes'."
 msgstr ""
 "Permite cambiar si el sistema debe asumir que el reloj de la máquina está "
 "ajustado a la hora UTC o no. Por defecto es «Si»."
@@ -436,7 +491,9 @@ msgstr "B<live-config.x-session-manager=>I<X_SESSION_MANAGER> | B<x-session-mana
 
 #. type: Plain text
 #: en/live-config.7:73
-msgid "Allows to set the x-session-manager through update-alternatives."
+#, fuzzy
+#| msgid "Allows to set the x-session-manager through update-alternatives."
+msgid "Allows one to set the x-session-manager through update-alternatives."
 msgstr ""
 "Permite seleccionar el gestor de sesión gráfica «x-session-manager» mediante "
 "«update-alternatives»."
@@ -449,8 +506,14 @@ msgstr "B<live-config.xorg-driver>=I<XORG_DRIVER> | B<xorg-driver>=I<XORG_DRIVER
 
 #. type: Plain text
 #: en/live-config.7:75
+#, fuzzy
+#| msgid ""
+#| "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
+#| "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
+#| "live system, the I<DRIVER> is enforced for these devices. If both a boot "
+#| "parameter and an override are found, the boot parameter takes precedence."
 msgid ""
-"Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
+"Allows one to set xorg driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
 "live system, the I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and an override are found, the boot parameter takes precedence."
@@ -469,8 +532,11 @@ msgstr "B<live-config.xorg-resolution>=I<XORG_RESOLUTION>·|·B<xorg-resolution>
 
 #. type: Plain text
 #: en/live-config.7:77
+#, fuzzy
+#| msgid ""
+#| "Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgid ""
-"Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
+"Allows one to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr ""
 "Permite seleccionar la resolución de xorg en lugar de detectarla de forma "
 "automática, p.ej. 1024x768."
@@ -483,8 +549,14 @@ msgstr "B<live-config.wlan-driver>=I<WLAN_DRIVER> | B<wlan-driver>=I<WLAN_DRIVER
 
 #. type: Plain text
 #: en/live-config.7:79
+#, fuzzy
+#| msgid ""
+#| "Allows to set WLAN driver instead of autodetecting it. If a PCI ID is "
+#| "specified in /usr/share/live/config/broadcom-sta/I<DRIVER>.ids within the "
+#| "live system, the I<DRIVER> is enforced for these devices. If both a boot "
+#| "parameter and an override are found, the boot parameter takes precedence."
 msgid ""
-"Allows to set WLAN driver instead of autodetecting it. If a PCI ID is "
+"Allows one to set WLAN driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/broadcom-sta/I<DRIVER>.ids within the "
 "live system, the I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and an override are found, the boot parameter takes precedence."
@@ -503,14 +575,23 @@ msgstr "B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn> | B
 
 #. type: Plain text
 #: en/live-config.7:81
+#, fuzzy
+#| msgid ""
+#| "Allows to fetch and execute one or more arbitrary files. Note that the "
+#| "URLs must be fetchable by wget (http, ftp or file://), the files are "
+#| "executed in /tmp of the running live system, and that the files needs "
+#| "their dependencies, if any, already installed, e.g. if a python script "
+#| "should be executed the system needs python installed. Some hooks for some "
+#| "common use-cases are available at /usr/share/doc/live-config/examples/"
+#| "hooks/ and E<lt>I<http://live-systems.org/other/hooks>E<gt>."
 msgid ""
-"Allows to fetch and execute one or more arbitrary files. Note that the URLs "
-"must be fetchable by wget (http, ftp or file://), the files are executed in /"
-"tmp of the running live system, and that the files needs their dependencies, "
-"if any, already installed, e.g. if a python script should be executed the "
-"system needs python installed. Some hooks for some common use-cases are "
-"available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
-"live-systems.org/other/hooks>E<gt>."
+"Allows one to fetch and execute one or more arbitrary files. Note that the "
+"URLs must be fetchable by wget (http, ftp or file://), the files are "
+"executed in /tmp of the running live system, and that the files needs their "
+"dependencies, if any, already installed, e.g. if a python script should be "
+"executed the system needs python installed. Some hooks for some common use-"
+"cases are available at /usr/share/doc/live-config/examples/hooks/ and "
+"E<lt>I<http://live-systems.org/other/hooks>E<gt>."
 msgstr ""
 "Permite buscar y ejecutar uno o más ficheros de forma arbitraria. Tener en "
 "cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://), "
@@ -632,7 +713,9 @@ msgstr "Parámetros de arranque (opciones especiales)"
 
 #. type: Plain text
 #: en/live-config.7:104
-msgid "For special use cases there are some special boot paramters."
+#, fuzzy
+#| msgid "For special use cases there are some special boot paramters."
+msgid "For special use cases there are some special boot parameters."
 msgstr ""
 "Para casos de uso especial hay algunos parámetros de arranque especiales."
 
@@ -700,12 +783,19 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:116
+#, fuzzy
+#| msgid ""
+#| "Although the configuration files placed in the configuration directories "
+#| "do not require a particular name or suffix, it is suggested for "
+#| "consistency reasons to either use 'vendor.conf' or 'project.conf' as a "
+#| "naming scheme (whereas 'vendor' or 'project' is replaced with the actual "
+#| "name, resulting in a filename like 'progress-linux.conf')."
 msgid ""
 "Although the configuration files placed in the configuration directories do "
-"not require a particular name or suffix, it is suggested for consistency "
-"reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme "
-"(whereas 'vendor' or 'project' is replaced with the actual name, resulting "
-"in a filename like 'progress-linux.conf')."
+"not require a particular name, it is suggested for consistency reasons to "
+"either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas "
+"'vendor' or 'project' is replaced with the actual name, resulting in a "
+"filename like 'progress-linux.conf')."
 msgstr ""
 "Aunque los ficheros de configuración situados en los directorios de "
 "configuración no requieren un nombre o sufijo en concreto, se sugiere, por "
@@ -1092,12 +1182,21 @@ msgstr "Eliminación de componentes de configuración existentes."
 
 #. type: Plain text
 #: en/live-config.7:174
+#, fuzzy
+#| msgid ""
+#| "It is not really possible to remove components itself in a sane way yet "
+#| "without requiring either to ship a locally modified B<live-config> "
+#| "package or using dpkg-divert. However, the same can be achieved by "
+#| "disabling the respective components through the live-config.nocomponents "
+#| "mechanism, see above. To avoid to always need specifing disabled "
+#| "components through the boot parameter, a configuration file should be "
+#| "used, see above."
 msgid ""
 "It is not really possible to remove components itself in a sane way yet "
 "without requiring either to ship a locally modified B<live-config> package "
 "or using dpkg-divert. However, the same can be achieved by disabling the "
 "respective components through the live-config.nocomponents mechanism, see "
-"above. To avoid to always need specifing disabled components through the "
+"above. To avoid to always need specifying disabled components through the "
 "boot parameter, a configuration file should be used, see above."
 msgstr ""
 "No es realmente posible eliminar los componentes de una manera sensata sin "
@@ -1141,9 +1240,13 @@ msgstr "B<debconf>"
 
 #. type: Plain text
 #: en/live-config.7:182
+#, fuzzy
+#| msgid ""
+#| "allows to apply arbitrary preseed files placed on the live media or an "
+#| "http/ftp server."
 msgid ""
-"allows to apply arbitrary preseed files placed on the live media or an http/"
-"ftp server."
+"allows one to apply arbitrary preseed files placed on the live media or an "
+"http/ftp server."
 msgstr ""
 "permite aplicar de forma arbitraria ficheros de preconfiguración situados en "
 "el medios en vivo o en un servidor http/ftp."
@@ -1514,9 +1617,13 @@ msgstr "B<hooks>"
 
 #. type: Plain text
 #: en/live-config.7:252
+#, fuzzy
+#| msgid ""
+#| "allows to run arbitrary commands from a file placed on the live media or "
+#| "an http/ftp server."
 msgid ""
-"allows to run arbitrary commands from a file placed on the live media or an "
-"http/ftp server."
+"allows one to run arbitrary commands from a file placed on the live media or "
+"an http/ftp server."
 msgstr ""
 "permite ejecutar de forma arbitraria los comandos de un fichero ubicado en "
 "el medio en vivo o en un servidor http/ftp."

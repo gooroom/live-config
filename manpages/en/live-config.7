@@ -35,7 +35,7 @@ All components are run, except the specified ones.
 Some individual components can change their behaviour upon a boot parameter.
 
 .IP "\fBlive\-config.debconf\-preseed\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBdebconf\-preseed\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
-Allows to fetch and apply one or more debconf preseed files to be applied to the debconf database. Note that the URLs must be fetchable by wget (http, ftp or file://).
+Allows one to fetch and apply one or more debconf preseed files to be applied to the debconf database. Note that the URLs must be fetchable by wget (http, ftp or file://).
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
@@ -45,39 +45,39 @@ All preseed files in /live/config\-preseed/ of the live medium can be automatica
 .br
 If several mechanisms are combined, then filesystem preseed files are applied first, then medium preseed files, and last the network preseed files.
 .IP "\fBlive\-config.hostname\fR=\fIHOSTNAME\fR | \fBhostname\fR=\fIHOSTNAME\fR" 4
-Allows to set the hostname of the system. The default is 'debian'.
+Allows one to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive\-config.username\fR=\fIUSERNAME\fR | \fBusername\fR=\fIUSERNAME\fR" 4
-Allows to set the username that gets created for autologin. The default is 'user'.
+Allows one to set the username that gets created for autologin. The default is 'user'.
 .IP "\fBlive\-config.user\-default\-groups\fR=\fIGROUP1\fR,\fIGROUP2\fR ... \fIGROUPn\fR | \fBuser\-default\-groups\fR=\fIGROUP1\fR,\fIGROUP2\fR ... \fIGROUPn\fR" 4
-Allows to set the default groups of the users that gets created for autologin is member of. The default is 'audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth'.
+Allows one to set the default groups of the users that gets created for autologin is member of. The default is 'audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fR=""\fIUSER FULLNAME\fR"" | \fBuser\-fullname\fR=""\fIUSER FULLNAME\fR""" 4
-Allows to set the fullname of the users that gets created for autologin. On Debian the default is 'Debian Live user'.
+Allows one to set the fullname of the users that gets created for autologin. On Debian the default is 'Debian Live user'.
 .IP "\fBlive\-config.locales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR | \fBlocales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR" 4
-Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_US.UTF\-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly.
+Allows one to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_US.UTF\-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly.
 .IP "\fBlive\-config.timezone\fR=\fITIMEZONE\fR | \fBtimezone\fR=\fITIMEZONE\fR" 4
-Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
+Allows one to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
 .IP "\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR | \fBkeyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
-Allows to change the keyboard model. There is no default value set.
+Allows one to change the keyboard model. There is no default value set.
 .IP "\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR | \fBkeyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
-Allows to change the keyboard layouts. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set.
+Allows one to change the keyboard layouts. If more than one is specified, the tools of the desktop environment will allow one to switch it under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-variants\fR=\fIKEYBOARD_VARIANT1\fR,\fIKEYBOARD_VARIANT2\fR ... \fIKEYBOARD_VARIANTn\fR | \fBkeyboard\-variants\fR=\fIKEYBOARD_VARIANT1\fR,\fIKEYBOARD_VARIANT2\fR ... \fIKEYBOARD_VARIANTn\fR" 4
-Allows to change the keyboard variants. If more than one is specified, the same number of values as keyboard\-layouts values should be specified as they will be matched one\-to\-one in the order specified. Blank values are allowed. The tools of the desktop environment will allow to switch between each layout and variant pair under X11. There is no default value set.
+Allows one to change the keyboard variants. If more than one is specified, the same number of values as keyboard\-layouts values should be specified as they will be matched one\-to\-one in the order specified. Blank values are allowed. The tools of the desktop environment will allow one to switch between each layout and variant pair under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR | \fBkeyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
-Allows to change the keyboard options. There is no default value set.
+Allows one to change the keyboard options. There is no default value set.
 .IP "\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR | \fBsysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
-Allows to disable sysv services through update-rc.d.
+Allows one to disable sysv services through update-rc.d.
 .IP "\fBlive\-config.utc\fR=\fByes\fR|no | \fButc\fR=\fByes\fR|no" 4
-Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
+Allows one to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fIX_SESSION_MANAGER\fR | \fBx\-session\-manager\fR=\fIX_SESSION_MANAGER\fR" 4
-Allows to set the x\-session\-manager through update\-alternatives.
+Allows one to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR | \fBxorg\-driver\fR=\fIXORG_DRIVER\fR" 4
-Allows to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
+Allows one to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
-Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
+Allows one to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.wlan\-driver\fR=\fIWLAN_DRIVER\fR | \fBwlan\-driver\fR=\fIWLAN_DRIVER\fR" 4
-Allows to set WLAN driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/broadcom-sta/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
+Allows one to set WLAN driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/broadcom-sta/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live-systems.org/other/hooks\fR>.
+Allows one to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live-systems.org/other/hooks\fR>.
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
@@ -100,7 +100,7 @@ Disables the automatic login on the console, not affecting the graphical autolog
 Disables the automatic login with any display manager, not affecting tty autologin.
 
 .SS Boot Parameters (special options)
-For special use cases there are some special boot paramters.
+For special use cases there are some special boot parameters.
 
 .IP "\fBlive\-config.debug\fR | \fBdebug\fR" 4
 Enables debug output in live\-config.
@@ -170,7 +170,7 @@ Downstream projects can put their components into /lib/live/config and do not ne
 The components are best put into an own debian package. A sample package containing an example component can be found in /usr/share/doc/live\-config/examples.
 
 .SS Removing existing config components
-It is not really possible to remove components itself in a sane way yet without requiring either to ship a locally modified \fBlive\-config\fR package or using dpkg-divert. However, the same can be achieved by disabling the respective components through the live\-config.nocomponents mechanism, see above. To avoid to always need specifing disabled components through the boot parameter, a configuration file should be used, see above.
+It is not really possible to remove components itself in a sane way yet without requiring either to ship a locally modified \fBlive\-config\fR package or using dpkg-divert. However, the same can be achieved by disabling the respective components through the live\-config.nocomponents mechanism, see above. To avoid to always need specifying disabled components through the boot parameter, a configuration file should be used, see above.
 .PP
 The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live\-config/examples.
 
@@ -178,7 +178,7 @@ The configuration files for the live system itself are best put into an own debi
 \fBlive\-config\fR currently features the following components in /lib/live/config.
 
 .IP "\fBdebconf\fR" 4
-allows to apply arbitrary preseed files placed on the live media or an http/ftp server.
+allows one to apply arbitrary preseed files placed on the live media or an http/ftp server.
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
 .IP "\fBuser\-setup\fR" 4
@@ -248,7 +248,7 @@ configures xfce4\-panel to default settings.
 .IP "\fBxscreensaver\fR" 4
 disables the screensaver locking the screen.
 .IP "\fBhooks\fR" 4
-allows to run arbitrary commands from a file placed on the live media or an http/ftp server.
+allows one to run arbitrary commands from a file placed on the live media or an http/ftp server.
 
 .SH FILES
 .IP "\fB/etc/live/config.conf\fR" 4

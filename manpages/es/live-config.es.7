@@ -61,9 +61,9 @@ Algunos componentes pueden cambiar su comportamiento según que parámetros de
 arranque se utilicen.
 
 .IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Permite buscar y aplicar uno o más ficheros de preconfiguración debconf a la
-base de datos de debconf. Tener en cuenta que las URLs deben poder ser
-descargadas por wget (http, ftp o file://).
+Allows one to fetch and apply one or more debconf preseed files to be
+applied to the debconf database. Note that the URLs must be fetchable by
+wget (http, ftp or file://).
 .br
 Si el fichero está en el medio en vivo, se puede obtener con
 file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
@@ -80,73 +80,66 @@ Si se combinan varios mecanismos, los ficheros de preconfiguración del
 sistema de ficheros se aplican primero, después los ficheros de
 preconfiguración del medio, y en último lugar los de red.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
-Permite establecer el anfitrión del sistema. Por defecto es «debian».
+Allows one to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive\-config.username\fP=\fIUSERNAME\fP | \fBusername\fP=\fIUSERNAME\fP" 4
-Permite establecer el nombre del usuario que se crea para iniciar sesión de
-forma automática. Por defecto es «user».
+Allows one to set the username that gets created for autologin. The default
+is 'user'.
 .IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-Permite establecer los grupos por defecto a los que pertenecen los usuarios
-que se crean para iniciar sesión automáticamente. Los grupos predeterminados
-son 'audio cdrom dip floppy video plugdev netdev powerdev scanner
-bluetooth'.
+Allows one to set the default groups of the users that gets created for
+autologin is member of. The default is 'audio cdrom dip floppy video plugdev
+netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIUSER·FULLNAME\fP\(dq" 4
-Permite establecer el nombre completo del usuario que se crea para iniciar
-sesión de forma automática. Por defecto es «Debian Live user».
+Allows one to set the fullname of the users that gets created for
+autologin. On Debian the default is 'Debian Live user'.
 .IP "\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP·...·\fILOCALEn\fP | \fBlocales\fP=\fILOCALE1\fP,\fILOCALE2\fP·...·\fILOCALEn\fP" 4
-Permite establecer las variantes locales del sistema,
-p.ej. «es_ES.UTF\-8». Por defecto es «en_US.UTF\-8». En caso de que las
-variantes locales no estén disponibles en el sistema, se generarán sobre la
-marcha.
+Allows one to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default
+is 'en_US.UTF\-8'. In case the selected locale is not already available on
+the system, it is automatically generated on the fly.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
-Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por
-defecto es «UTC».
+Allows one to set the timezone of the system, e.g. 'Europe/Zurich'. The
+default is 'UTC'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP | \fBkeyboard\-model\fP=\fIKEYBOARD_MODEL\fP" 4
-Permite cambiar el modelo de teclado. No hay ningún valor por defecto.
+Allows one to change the keyboard model. There is no default value set.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
-Permite cambiar la disposición del teclado. Si se especifica más de una, las
-herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
-valor por defecto.
+Allows one to change the keyboard layouts. If more than one is specified,
+the tools of the desktop environment will allow one to switch it under
+X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-Permite cambiar las variantes de teclado. Si se especifica más de una, se
-deben especificar el mismo número de variantes como de distribuciones de
-teclado, ya que se corresponderan una a una en el orden especificado. Se
-pueden dejar valores en blanco. Las herramientas de escritorio permitirán
-cambiarlas bajo X11. No hay ningún valor por defecto.
+Allows one to change the keyboard variants. If more than one is specified,
+the same number of values as keyboard\-layouts values should be specified as
+they will be matched one\-to\-one in the order specified. Blank values are
+allowed. The tools of the desktop environment will allow one to switch
+between each layout and variant pair under X11. There is no default value
+set.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
-Permite cambiar las opciones del teclado. No hay un valor por defecto.
+Allows one to change the keyboard options. There is no default value set.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
-Permite desactivar los servicios «sysv» mediante «update\-rc.d».
+Allows one to disable sysv services through update\-rc.d.
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permite cambiar si el sistema debe asumir que el reloj de la máquina está
-ajustado a la hora UTC o no. Por defecto es «Si».
+Allows one to change if the system is assuming that the hardware clock is
+set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
-Permite seleccionar el gestor de sesión gráfica «x\-session\-manager» mediante
-«update\-alternatives».
+Allows one to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP | \fBxorg\-driver\fP=\fIXORG_DRIVER\fP" 4
-Permite seleccionar el controlador xorg en lugar de detectarlo de forma
-automática. Si se especifica un PCI ID en
-/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids dentro del sistema en
-vivo,  se aplica \fIDRIVER\fP para estos dispositivos. Si se encuentran juntos
-un parámetro de arranque y un override, el parámetro de arranque tiene
-prioridad.
+Allows one to set xorg driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids within the
+live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and an override are found, the boot parameter takes precedence.
 .IP \fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP·|·\fBxorg\-resolution\fP=\fIXORG_RESOLUTION\fP 4
-Permite seleccionar la resolución de xorg en lugar de detectarla de forma
-automática, p.ej. 1024x768.
+Allows one to set xorg resolution instead of autodetecting it,
+e.g. 1024x768.
 .IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
-Permite seleccionar el controlador WLAN en lugar de detectarlo de forma
-automática. Si se especifica un PCI ID en
-/usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids dentro del sistema en
-vivo,  se aplica \fIDRIVER\fP para estos dispositivos. Si se encuentran juntos
-un parámetro de arranque y un override, el parámetro de arranque tiene
-prioridad.
+Allows one to set WLAN driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
+live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Permite buscar y ejecutar uno o más ficheros de forma arbitraria. Tener en
-cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
-los ficheros se ejecutan en el directorio /tmp del sistema en vivo en
-ejecución y que los ficheros necesitan, si tienen dependencias, tenerlas
-resueltas. p.ej. Si se debe ejecutar un script python, el sistema necesita
-tener python instalado. Hay algunos scripts gancho para varios casos de uso
-común disponibles en /usr/share/doc/live\-config/examples/hooks/ y en
+Allows one to fetch and execute one or more arbitrary files. Note that the
+URLs must be fetchable by wget (http, ftp or file://), the files are
+executed in /tmp of the running live system, and that the files needs their
+dependencies, if any, already installed, e.g. if a python script should be
+executed the system needs python installed. Some hooks for some common
+use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
 <\fIhttp://live\-systems.org/other/hooks\fP>.
 .br
 Si el fichero está en el medio en vivo, se puede obtener con
@@ -182,7 +175,7 @@ Desactiva el inicio de sesión automático con cualquier gestor de ventanas,
 sin afectar el inicio de sesión automático en un terminal tty.
 
 .SS "Parámetros de arranque (opciones especiales)"
-Para casos de uso especial hay algunos parámetros de arranque especiales.
+For special use cases there are some special boot parameters.
 
 .IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
 Activa la información sobre errores en live\-config.
@@ -206,11 +199,11 @@ en vivo (live/config.conf, live/config.conf.d/*.conf). Si ambos directorios
 se utilizan para una determinada opción, la del medio en vivo tienen
 prioridad sobre la del sistema de ficheros raíz.
 .PP
-Aunque los ficheros de configuración situados en los directorios de
-configuración no requieren un nombre o sufijo en concreto, se sugiere, por
-coherencia, utilizar como nomenclatura «vendor.conf» o «project.conf»
-(Siempre que «vendor» o «project» se sustituya por el nombre real, lo que
-resultará en un nombre de fichero como «progress\-linux.conf»).
+Although the configuration files placed in the configuration directories do
+not require a particular name, it is suggested for consistency reasons to
+either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas
+\&'vendor' or 'project' is replaced with the actual name, resulting in a
+filename like 'progress\-linux.conf').
 .PP
 El contenido de los ficheros de configuración consiste en una o más de las
 siguientes variables.
@@ -293,14 +286,12 @@ Lo ideal sería incluir los componentes en su propio paquete debian. En
 un componente de ejemplo.
 
 .SS "Eliminación de componentes de configuración existentes."
-No es realmente posible eliminar los componentes de una manera sensata sin
-incluir un paquete \fBlive\-config\fP modificado localmente o utilizando
-dpkg\-divert. Sin embargo, se puede obtener el mismo resultado si se
-desactivan los componentes correspondientes a través del mecanismo
-live\-config.nocomponents, como se ha indicado anteriormente. Para evitar que
-siempre haga falta especificar qué componentes se desactivan a través del
-parámetro de arranque, debería utilizarse un fichero de configuración, véase
-más arriba.
+It is not really possible to remove components itself in a sane way yet
+without requiring either to ship a locally modified \fBlive\-config\fP package
+or using dpkg\-divert. However, the same can be achieved by disabling the
+respective components through the live\-config.nocomponents mechanism, see
+above. To avoid to always need specifying disabled components through the
+boot parameter, a configuration file should be used, see above.
 .PP
 Lo ideal sería incluir los ficheros de configuración para el sistema en vivo
 dentro de un paquete debian. Se puede encontrar un paquete de muestra con un
@@ -310,8 +301,8 @@ ejemplo de configuración en /usr/share/doc/live\-config/examples.
 \fBlive\-config\fP incluye los siguientes componentes en /lib/live/config.
 
 .IP \fBdebconf\fP 4
-permite aplicar de forma arbitraria ficheros de preconfiguración situados en
-el medios en vivo o en un servidor http/ftp.
+allows one to apply arbitrary preseed files placed on the live media or an
+http/ftp server.
 .IP \fBhostname\fP 4
 configura /etc/hostname y /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -381,8 +372,8 @@ configura xfce4\-panel utilizando las opciones por defecto.
 .IP \fBxscreensaver\fP 4
 Impide que el salvapantallas bloquee la pantalla.
 .IP \fBhooks\fP 4
-permite ejecutar de forma arbitraria los comandos de un fichero ubicado en
-el medio en vivo o en un servidor http/ftp.
+allows one to run arbitrary commands from a file placed on the live media or
+an http/ftp server.
 
 .SH FICHEROS
 .IP \fB/etc/live/config.conf\fP 4

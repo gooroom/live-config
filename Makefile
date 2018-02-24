@@ -59,7 +59,7 @@ install:
 	# Installing frontend and components
 	mkdir -p $(DESTDIR)/bin $(DESTDIR)/lib/live/config
 	cp frontend/live-* $(DESTDIR)/bin
-	cp frontend/init-config.sh $(DESTDIR)/lib/live/
+	cp frontend/*.sh $(DESTDIR)/lib/live/
 	cp components/* $(DESTDIR)/lib/live/config
 
 	mkdir -p $(DESTDIR)/var/lib/live/config

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config\n"
-"POT-Creation-Date: 2015-09-23 16:59+0200\n"
+"POT-Creation-Date: 2018-02-24 11:53+0100\n"
 "PO-Revision-Date: 2015-08-21 18:15+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
@@ -197,10 +197,15 @@ msgstr "B<live-config.debconf-preseed>=filesystem|medium|I<URL1>|I<URL2>| ... |I
 
 #. type: Plain text
 #: en/live-config.7:39
+#, fuzzy
+#| msgid ""
+#| "Allows to fetch and apply one or more debconf preseed files to be applied "
+#| "to the debconf database. Note that the URLs must be fetchable by wget "
+#| "(http, ftp or file://)."
 msgid ""
-"Allows to fetch and apply one or more debconf preseed files to be applied to "
-"the debconf database. Note that the URLs must be fetchable by wget (http, "
-"ftp or file://)."
+"Allows one to fetch and apply one or more debconf preseed files to be "
+"applied to the debconf database. Note that the URLs must be fetchable by "
+"wget (http, ftp or file://)."
 msgstr ""
 "debconf データベースに適用する debconf の preseed ファイルを取得、適用しま"
 "す。URL は wget により取得できるもの (http、 ftp、 file:// のどれか) でないと"
@@ -254,7 +259,9 @@ msgstr "B<live-config.hostname>=I<ホスト名> | B<hostname>=I<ホスト名>"
 
 #. type: Plain text
 #: en/live-config.7:49
-msgid "Allows to set the hostname of the system. The default is 'debian'."
+#, fuzzy
+#| msgid "Allows to set the hostname of the system. The default is 'debian'."
+msgid "Allows one to set the hostname of the system. The default is 'debian'."
 msgstr "システムのホスト名をセットします。デフォルトは「debian」です。"
 
 #. type: IP
@@ -265,9 +272,13 @@ msgstr "B<live-config.username>=I<ユーザ名> | B<username>=I<ユーザ名>"
 
 #. type: Plain text
 #: en/live-config.7:51
+#, fuzzy
+#| msgid ""
+#| "Allows to set the username that gets created for autologin. The default "
+#| "is 'user'."
 msgid ""
-"Allows to set the username that gets created for autologin. The default is "
-"'user'."
+"Allows one to set the username that gets created for autologin. The default "
+"is 'user'."
 msgstr ""
 "自動ログイン用に作成するユーザの名前をセットします。デフォルトは「user」で"
 "す。"
@@ -280,8 +291,13 @@ msgstr "B<live-config.user-default-groups>=I<グループ1>,I<グループ2> ...
 
 #. type: Plain text
 #: en/live-config.7:53
+#, fuzzy
+#| msgid ""
+#| "Allows to set the default groups of the users that gets created for "
+#| "autologin is member of. The default is 'audio cdrom dip floppy video "
+#| "plugdev netdev powerdev scanner bluetooth'."
 msgid ""
-"Allows to set the default groups of the users that gets created for "
+"Allows one to set the default groups of the users that gets created for "
 "autologin is member of. The default is 'audio cdrom dip floppy video plugdev "
 "netdev powerdev scanner bluetooth'."
 msgstr ""
@@ -297,9 +313,13 @@ msgstr "B<live-config.user-fullname>=\"I<ユーザのフルネーム>\" | B<user
 
 #. type: Plain text
 #: en/live-config.7:55
+#, fuzzy
+#| msgid ""
+#| "Allows to set the fullname of the users that gets created for autologin. "
+#| "On Debian the default is 'Debian Live user'."
 msgid ""
-"Allows to set the fullname of the users that gets created for autologin. On "
-"Debian the default is 'Debian Live user'."
+"Allows one to set the fullname of the users that gets created for autologin. "
+"On Debian the default is 'Debian Live user'."
 msgstr ""
 "自動ログイン用に作成するユーザのフルネームをセットします。Debian でのデフォル"
 "トは「Debian Live user」です。"
@@ -312,10 +332,15 @@ msgstr "B<live-config.locales>=I<ロケール1>,I<ロケール2> ... I<ロケー
 
 #. type: Plain text
 #: en/live-config.7:57
+#, fuzzy
+#| msgid ""
+#| "Allows to set the locale of the system, e.g. 'de_CH.UTF-8'. The default "
+#| "is 'en_US.UTF-8'. In case the selected locale is not already available on "
+#| "the system, it is automatically generated on the fly."
 msgid ""
-"Allows to set the locale of the system, e.g. 'de_CH.UTF-8'. The default is "
-"'en_US.UTF-8'. In case the selected locale is not already available on the "
-"system, it is automatically generated on the fly."
+"Allows one to set the locale of the system, e.g. 'de_CH.UTF-8'. The default "
+"is 'en_US.UTF-8'. In case the selected locale is not already available on "
+"the system, it is automatically generated on the fly."
 msgstr ""
 "システムのロケール、例えば「de_CH.UTF-8」をセットします。デフォルトは「en_US."
 "UTF-8」です。選択したロケールが既に利用できるようになっていない場合はその場で"
@@ -329,9 +354,13 @@ msgstr "B<live-config.timezone>=I<タイムゾーン> | B<timezone>=I<タイム�
 
 #. type: Plain text
 #: en/live-config.7:59
+#, fuzzy
+#| msgid ""
+#| "Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The "
+#| "default is 'UTC'."
 msgid ""
-"Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default "
-"is 'UTC'."
+"Allows one to set the timezone of the system, e.g. 'Europe/Zurich'. The "
+"default is 'UTC'."
 msgstr ""
 "システムのタイムゾーン、例えば「Europe/Zurich」をセットします。デフォルトは"
 "「UTC」です。"
@@ -345,7 +374,9 @@ msgstr "B<live-config.keyboard-model>=I<キーボードの種類> | B<keyboard-m
 
 #. type: Plain text
 #: en/live-config.7:61
-msgid "Allows to change the keyboard model. There is no default value set."
+#, fuzzy
+#| msgid "Allows to change the keyboard model. There is no default value set."
+msgid "Allows one to change the keyboard model. There is no default value set."
 msgstr "キーボードの種類を変更します。デフォルト値はセットされていません。"
 
 # Translator's NOTE: KEYBOARD_LAYOUT is such as jp or us
@@ -359,10 +390,15 @@ msgstr "B<live-config.keyboard-layouts>=I<キーボードレイアウト1>,I<キ
 
 #. type: Plain text
 #: en/live-config.7:63
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard layouts. If more than one is specified, the "
+#| "tools of the desktop environment will allow to switch it under X11. There "
+#| "is no default value set."
 msgid ""
-"Allows to change the keyboard layouts. If more than one is specified, the "
-"tools of the desktop environment will allow to switch it under X11. There is "
-"no default value set."
+"Allows one to change the keyboard layouts. If more than one is specified, "
+"the tools of the desktop environment will allow one to switch it under X11. "
+"There is no default value set."
 msgstr ""
 "キーボードレイアウトを変更します。複数指定した場合は X11 からデスクトップ環境"
 "のツールを使うと切り替えることができます。デフォルト値はセットされていませ"
@@ -377,12 +413,21 @@ msgstr "B<live-config.keyboard-variants>=I<キーボード配列1>,I<キーボ�
 
 #. type: Plain text
 #: en/live-config.7:65
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard variants. If more than one is specified, "
+#| "the same number of values as keyboard-layouts values should be specified "
+#| "as they will be matched one-to-one in the order specified. Blank values "
+#| "are allowed. The tools of the desktop environment will allow to switch "
+#| "between each layout and variant pair under X11. There is no default value "
+#| "set."
 msgid ""
-"Allows to change the keyboard variants. If more than one is specified, the "
-"same number of values as keyboard-layouts values should be specified as they "
-"will be matched one-to-one in the order specified. Blank values are allowed. "
-"The tools of the desktop environment will allow to switch between each "
-"layout and variant pair under X11. There is no default value set."
+"Allows one to change the keyboard variants. If more than one is specified, "
+"the same number of values as keyboard-layouts values should be specified as "
+"they will be matched one-to-one in the order specified. Blank values are "
+"allowed. The tools of the desktop environment will allow one to switch "
+"between each layout and variant pair under X11. There is no default value "
+"set."
 msgstr ""
 "キーボード配列を変更します。複数指定する場合は指定した順にキーボードレイアウ"
 "トの設定と一対一で対応するため、値をそれぞれ同数指定するようにしてください。"
@@ -398,7 +443,11 @@ msgstr "B<live-config.keyboard-options>=I<キーボードオプション> | B<ke
 
 #. type: Plain text
 #: en/live-config.7:67
-msgid "Allows to change the keyboard options. There is no default value set."
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard options. There is no default value set."
+msgid ""
+"Allows one to change the keyboard options. There is no default value set."
 msgstr "キーボードオプションを変更します。デフォルト値はセットされていません。"
 
 #. type: IP
@@ -409,7 +458,9 @@ msgstr "B<live-config.sysv-rc>=I<サービス1>,I<サービス2> ... I<サービ
 
 #. type: Plain text
 #: en/live-config.7:69
-msgid "Allows to disable sysv services through update-rc.d."
+#, fuzzy
+#| msgid "Allows to disable sysv services through update-rc.d."
+msgid "Allows one to disable sysv services through update-rc.d."
 msgstr "update-rc.d から sysv サービスを無効化します。"
 
 #. type: IP
@@ -420,9 +471,13 @@ msgstr "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
 
 #. type: Plain text
 #: en/live-config.7:71
+#, fuzzy
+#| msgid ""
+#| "Allows to change if the system is assuming that the hardware clock is set "
+#| "to UTC or not. The default is 'yes'."
 msgid ""
-"Allows to change if the system is assuming that the hardware clock is set to "
-"UTC or not. The default is 'yes'."
+"Allows one to change if the system is assuming that the hardware clock is "
+"set to UTC or not. The default is 'yes'."
 msgstr ""
 "ハードウェア時刻が UTC でセットされているとシステムが仮定するか否かを変更しま"
 "す。デフォルトは「yes」です。"
@@ -435,7 +490,9 @@ msgstr "B<live-config.x-session-manager=>I<Xセッションマネージャ> | B<
 
 #. type: Plain text
 #: en/live-config.7:73
-msgid "Allows to set the x-session-manager through update-alternatives."
+#, fuzzy
+#| msgid "Allows to set the x-session-manager through update-alternatives."
+msgid "Allows one to set the x-session-manager through update-alternatives."
 msgstr "update-alternatives から x-session-manager をセットします。"
 
 #. type: IP
@@ -446,8 +503,14 @@ msgstr "B<live-config.xorg-driver>=I<XORGドライバ> | B<xorg-driver>=I<XORG�
 
 #. type: Plain text
 #: en/live-config.7:75
+#, fuzzy
+#| msgid ""
+#| "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
+#| "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
+#| "live system, the I<DRIVER> is enforced for these devices. If both a boot "
+#| "parameter and an override are found, the boot parameter takes precedence."
 msgid ""
-"Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
+"Allows one to set xorg driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
 "live system, the I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and an override are found, the boot parameter takes precedence."
@@ -465,8 +528,11 @@ msgstr "B<live-config.xorg-resolution>=I<XORG解像度> | B<xorg-resolution>=I<X
 
 #. type: Plain text
 #: en/live-config.7:77
+#, fuzzy
+#| msgid ""
+#| "Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgid ""
-"Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
+"Allows one to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr "xorg 解像度を自動検出に代えてセットします。例えば 1024x768。"
 
 #. type: IP
@@ -477,8 +543,14 @@ msgstr "B<live-config.wlan-driver>=I<WLANドライバ> | B<wlan-driver>=I<WLAN�
 
 #. type: Plain text
 #: en/live-config.7:79
+#, fuzzy
+#| msgid ""
+#| "Allows to set WLAN driver instead of autodetecting it. If a PCI ID is "
+#| "specified in /usr/share/live/config/broadcom-sta/I<DRIVER>.ids within the "
+#| "live system, the I<DRIVER> is enforced for these devices. If both a boot "
+#| "parameter and an override are found, the boot parameter takes precedence."
 msgid ""
-"Allows to set WLAN driver instead of autodetecting it. If a PCI ID is "
+"Allows one to set WLAN driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/broadcom-sta/I<DRIVER>.ids within the "
 "live system, the I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and an override are found, the boot parameter takes precedence."
@@ -496,14 +568,23 @@ msgstr "B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn> | B
 
 #. type: Plain text
 #: en/live-config.7:81
+#, fuzzy
+#| msgid ""
+#| "Allows to fetch and execute one or more arbitrary files. Note that the "
+#| "URLs must be fetchable by wget (http, ftp or file://), the files are "
+#| "executed in /tmp of the running live system, and that the files needs "
+#| "their dependencies, if any, already installed, e.g. if a python script "
+#| "should be executed the system needs python installed. Some hooks for some "
+#| "common use-cases are available at /usr/share/doc/live-config/examples/"
+#| "hooks/ and E<lt>I<http://live-systems.org/other/hooks>E<gt>."
 msgid ""
-"Allows to fetch and execute one or more arbitrary files. Note that the URLs "
-"must be fetchable by wget (http, ftp or file://), the files are executed in /"
-"tmp of the running live system, and that the files needs their dependencies, "
-"if any, already installed, e.g. if a python script should be executed the "
-"system needs python installed. Some hooks for some common use-cases are "
-"available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
-"live-systems.org/other/hooks>E<gt>."
+"Allows one to fetch and execute one or more arbitrary files. Note that the "
+"URLs must be fetchable by wget (http, ftp or file://), the files are "
+"executed in /tmp of the running live system, and that the files needs their "
+"dependencies, if any, already installed, e.g. if a python script should be "
+"executed the system needs python installed. Some hooks for some common use-"
+"cases are available at /usr/share/doc/live-config/examples/hooks/ and "
+"E<lt>I<http://live-systems.org/other/hooks>E<gt>."
 msgstr ""
 "任意のファイルを取得、実行します。URL は wget により取得できるもの (http、 "
 "ftp、 file:// のどれか) でないといけないことと、そのファイルは実行中の Live "
@@ -626,7 +707,9 @@ msgstr "ブートパラメータ (特別なオプション)"
 
 #. type: Plain text
 #: en/live-config.7:104
-msgid "For special use cases there are some special boot paramters."
+#, fuzzy
+#| msgid "For special use cases there are some special boot paramters."
+msgid "For special use cases there are some special boot parameters."
 msgstr "特定用途向けに特別なブートパラメータがいくつかあります。"
 
 #. type: IP
@@ -691,12 +774,19 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:116
+#, fuzzy
+#| msgid ""
+#| "Although the configuration files placed in the configuration directories "
+#| "do not require a particular name or suffix, it is suggested for "
+#| "consistency reasons to either use 'vendor.conf' or 'project.conf' as a "
+#| "naming scheme (whereas 'vendor' or 'project' is replaced with the actual "
+#| "name, resulting in a filename like 'progress-linux.conf')."
 msgid ""
 "Although the configuration files placed in the configuration directories do "
-"not require a particular name or suffix, it is suggested for consistency "
-"reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme "
-"(whereas 'vendor' or 'project' is replaced with the actual name, resulting "
-"in a filename like 'progress-linux.conf')."
+"not require a particular name, it is suggested for consistency reasons to "
+"either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas "
+"'vendor' or 'project' is replaced with the actual name, resulting in a "
+"filename like 'progress-linux.conf')."
 msgstr ""
 "設定ディレクトリに置かれる設定ファイルには特定の名前や拡張子が要求されるわけ"
 "ではありませんが、命名規則を整合性のため「vendor.conf」や「project.conf」のよ"
@@ -1076,12 +1166,21 @@ msgstr "既存の設定構成要素の削除"
 
 #. type: Plain text
 #: en/live-config.7:174
+#, fuzzy
+#| msgid ""
+#| "It is not really possible to remove components itself in a sane way yet "
+#| "without requiring either to ship a locally modified B<live-config> "
+#| "package or using dpkg-divert. However, the same can be achieved by "
+#| "disabling the respective components through the live-config.nocomponents "
+#| "mechanism, see above. To avoid to always need specifing disabled "
+#| "components through the boot parameter, a configuration file should be "
+#| "used, see above."
 msgid ""
 "It is not really possible to remove components itself in a sane way yet "
 "without requiring either to ship a locally modified B<live-config> package "
 "or using dpkg-divert. However, the same can be achieved by disabling the "
 "respective components through the live-config.nocomponents mechanism, see "
-"above. To avoid to always need specifing disabled components through the "
+"above. To avoid to always need specifying disabled components through the "
 "boot parameter, a configuration file should be used, see above."
 msgstr ""
 "独自に改変した B<live-config> パッケージの作成や dpkg-divert の利用を要求せず"
@@ -1124,9 +1223,13 @@ msgstr "B<debconf>"
 
 #. type: Plain text
 #: en/live-config.7:182
+#, fuzzy
+#| msgid ""
+#| "allows to apply arbitrary preseed files placed on the live media or an "
+#| "http/ftp server."
 msgid ""
-"allows to apply arbitrary preseed files placed on the live media or an http/"
-"ftp server."
+"allows one to apply arbitrary preseed files placed on the live media or an "
+"http/ftp server."
 msgstr ""
 "Live メディアや http/ftp サーバに置かれた任意の preseed ファイルを適用しま"
 "す。"
@@ -1497,9 +1600,13 @@ msgstr "B<hooks>"
 
 #. type: Plain text
 #: en/live-config.7:252
+#, fuzzy
+#| msgid ""
+#| "allows to run arbitrary commands from a file placed on the live media or "
+#| "an http/ftp server."
 msgid ""
-"allows to run arbitrary commands from a file placed on the live media or an "
-"http/ftp server."
+"allows one to run arbitrary commands from a file placed on the live media or "
+"an http/ftp server."
 msgstr ""
 "Live メディアや http/ftp サーバに置かれたファイルから任意の任意のコマンドを実"
 "行します。"

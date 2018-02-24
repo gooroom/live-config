@@ -45,8 +45,9 @@
 個々の構成要素の一部はブートパラメータにより挙動を変更できます。
 
 .IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-debconf データベースに適用する debconf の preseed ファイルを取得、適用します。URL は wget により取得できるもの
-(http、 ftp、 file:// のどれか) でないといけないことに注意してください
+Allows one to fetch and apply one or more debconf preseed files to be
+applied to the debconf database. Note that the URLs must be fetchable by
+wget (http, ftp or file://).
 .br
 ファイルが Live メディア上にある場合は file:///lib/live/mount/medium/\fIファイル\fP、Live
 システム自体のルートファイルシステムにある場合は file:///\fIファイル\fP で取得できます。
@@ -60,51 +61,67 @@ debconf データベースに適用する debconf の preseed ファイルを取
 複数の仕組みを組み合わせた場合はファイルシステムの preseed ファイルがまず適用され、それからメディアの preseed
 ファイル、最後にネットワークの preseed ファイルが適用されます。
 .IP "\fBlive\-config.hostname\fP=\fIホスト名\fP | \fBhostname\fP=\fIホスト名\fP" 4
-システムのホスト名をセットします。デフォルトは「debian」です。
+Allows one to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive\-config.username\fP=\fIユーザ名\fP | \fBusername\fP=\fIユーザ名\fP" 4
-自動ログイン用に作成するユーザの名前をセットします。デフォルトは「user」です。
+Allows one to set the username that gets created for autologin. The default
+is 'user'.
 .IP "\fBlive\-config.user\-default\-groups\fP=\fIグループ1\fP,\fIグループ2\fP ... \fIグループn\fP | \fBuser\-default\-groups\fP=\fIグループ1\fP,\fIグループ2\fP ... \fIグループn\fP" 4
-自動ログイン用に作成するユーザがメンバーとなるデフォルトのグループをセットします。デフォルトは「audio cdrom dip floppy video
-plugdev netdev powerdev scanner bluetooth」です。
+Allows one to set the default groups of the users that gets created for
+autologin is member of. The default is 'audio cdrom dip floppy video plugdev
+netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIユーザのフルネーム\fP\(dq | \fBuser\-fullname\fP=\(dq\fIユーザのフルネーム\fP\(dq" 4
-自動ログイン用に作成するユーザのフルネームをセットします。Debian でのデフォルトは「Debian Live user」です。
+Allows one to set the fullname of the users that gets created for
+autologin. On Debian the default is 'Debian Live user'.
 .IP "\fBlive\-config.locales\fP=\fIロケール1\fP,\fIロケール2\fP ... \fIロケールn\fP | \fBlocales\fP=\fIロケール1\fP,\fIロケール2\fP ... \fIロケールn\fP" 4
-システムのロケール、例えば「de_CH.UTF\-8」をセットします。デフォルトは「en_US.UTF\-8」です。選択したロケールが既に利用できるようになっていない場合はその場で自動的に生成されます。
+Allows one to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default
+is 'en_US.UTF\-8'. In case the selected locale is not already available on
+the system, it is automatically generated on the fly.
 .IP "\fBlive\-config.timezone\fP=\fIタイムゾーン\fP | \fBtimezone\fP=\fIタイムゾーン\fP" 4
-システムのタイムゾーン、例えば「Europe/Zurich」をセットします。デフォルトは「UTC」です。
+Allows one to set the timezone of the system, e.g. 'Europe/Zurich'. The
+default is 'UTC'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIキーボードの種類\fP | \fBkeyboard\-model\fP=\fIキーボードの種類\fP" 4
-キーボードの種類を変更します。デフォルト値はセットされていません。
+Allows one to change the keyboard model. There is no default value set.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fIキーボードレイアウト1\fP,\fIキーボードレイアウト2\fP ... \fIキーボードレイアウトn\fP | \fBkeyboard\-layouts\fP=\fIキーボードレイアウト1\fP,\fIキーボードレイアウト2\fP ... \fIキーボードレイアウトn\fP" 4
-キーボードレイアウトを変更します。複数指定した場合は X11
-からデスクトップ環境のツールを使うと切り替えることができます。デフォルト値はセットされていません。
+Allows one to change the keyboard layouts. If more than one is specified,
+the tools of the desktop environment will allow one to switch it under
+X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fIキーボード配列1\fP,\fIキーボード配列2\fP ... \fIキーボード配列n\fP | \fBkeyboard\-variants\fP=\fIキーボード配列1\fP,\fIキーボード配列2\fP ... \fIキーボード配列n\fP" 4
-キーボード配列を変更します。複数指定する場合は指定した順にキーボードレイアウトの設定と一対一で対応するため、値をそれぞれ同数指定するようにしてください。空白を指定できます。X11
-からデスクトップ環境のツールを使うとレイアウトと配列のそれぞれの組を切り替えることができます。デフォルト値はセットされていません。
+Allows one to change the keyboard variants. If more than one is specified,
+the same number of values as keyboard\-layouts values should be specified as
+they will be matched one\-to\-one in the order specified. Blank values are
+allowed. The tools of the desktop environment will allow one to switch
+between each layout and variant pair under X11. There is no default value
+set.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIキーボードオプション\fP | \fBkeyboard\-options\fP=\fIキーボードオプション\fP" 4
-キーボードオプションを変更します。デフォルト値はセットされていません。
+Allows one to change the keyboard options. There is no default value set.
 .IP "\fBlive\-config.sysv\-rc\fP=\fIサービス1\fP,\fIサービス2\fP ... \fIサービスn\fP | \fBsysv\-rc\fP=\fIサービス1\fP,\fIサービス2\fP ... \fIサービスn\fP" 4
-update\-rc.d から sysv サービスを無効化します。
+Allows one to disable sysv services through update\-rc.d.
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-ハードウェア時刻が UTC でセットされているとシステムが仮定するか否かを変更します。デフォルトは「yes」です。
+Allows one to change if the system is assuming that the hardware clock is
+set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIXセッションマネージャ\fP | \fBx\-session\-manager\fP=\fIXセッションマネージャ\fP" 4
-update\-alternatives から x\-session\-manager をセットします。
+Allows one to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIXORGドライバ\fP | \fBxorg\-driver\fP=\fIXORGドライバ\fP" 4
-xorg ドライバを自動検出に代えてセットします。Live システム内の
-/usr/share/live/config/xserver\-xorg/\fIドライバ\fP.ids で PCI ID
-が指定された場合は対象デバイスについてその\fIドライバ\fPを強制的に使います。ブートパラメータと別の設定が両方ともある場合はブートパラメータが優先されます。
+Allows one to set xorg driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids within the
+live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG解像度\fP | \fBxorg\-resolution\fP=\fIXORG解像度\fP" 4
-xorg 解像度を自動検出に代えてセットします。例えば 1024x768。
+Allows one to set xorg resolution instead of autodetecting it,
+e.g. 1024x768.
 .IP "\fBlive\-config.wlan\-driver\fP=\fIWLANドライバ\fP | \fBwlan\-driver\fP=\fIWLANドライバ\fP" 4
-WLAN ドライバを自動検出に代えてセットします。Live システム内の
-/usr/share/live/config/broadcom\-sta/\fIドライバ\fP.ids で PCI ID
-が指定された場合は対象デバイスについてその\fIドライバ\fPを強制的に使います。ブートパラメータと別の設定が両方ともある場合はブートパラメータが優先されます。
+Allows one to set WLAN driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
+live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-任意のファイルを取得、実行します。URL は wget により取得できるもの (http、 ftp、 file:// のどれか)
-でないといけないことと、そのファイルは実行中の Live システムの /tmp
-で実行されること、そのファイルが何かに依存している場合はそれが既にインストールされている必要があることに注意してください。例えば python
-スクリプトを実行するのであればそのシステムには python がインストールされている必要があります。一般的な活用事例の一部について、そのためのフックが
-/usr/share/doc/live\-config/examples/hooks/ や
-<\fIhttp://live\-systems.org/other/hooks\fP> からいくらか利用できるようになっています。
+Allows one to fetch and execute one or more arbitrary files. Note that the
+URLs must be fetchable by wget (http, ftp or file://), the files are
+executed in /tmp of the running live system, and that the files needs their
+dependencies, if any, already installed, e.g. if a python script should be
+executed the system needs python installed. Some hooks for some common
+use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
+<\fIhttp://live\-systems.org/other/hooks\fP>.
 .br
 ファイルが Live メディア上にある場合は file:///lib/live/mount/medium/\fIファイル\fP、Live
 システム自体のルートファイルシステムにある場合は file:///\fIファイル\fP で取得できます。
@@ -131,7 +148,7 @@ sudo と policykit を無効にします。ユーザがそのシステムの roo
 あらゆるディスプレイマネージャによる自動化でのログインを無効にします。tty の自動ログインには影響しません。
 
 .SS "ブートパラメータ (特別なオプション)"
-特定用途向けに特別なブートパラメータがいくつかあります。
+For special use cases there are some special boot parameters.
 
 .IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
 live\-config のデバッグ用出力を有効化します。
@@ -149,8 +166,11 @@ live\-config のデバッグ用出力を有効化します。
 live/config.conf.d/*.conf)
 に配置できます。特定のオプションについて両方に配置されている場合はルートファイルシステムにあるものよりも Live メディアにあるものを優先します。
 .PP
-設定ディレクトリに置かれる設定ファイルには特定の名前や拡張子が要求されるわけではありませんが、命名規則を整合性のため「vendor.conf」や「project.conf」のようにすることを提案します
-(「vendor」や「project」は実際の名前に置き換え、ファイル名は「progress\-linux.conf」のようになります)。
+Although the configuration files placed in the configuration directories do
+not require a particular name, it is suggested for consistency reasons to
+either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas
+\&'vendor' or 'project' is replaced with the actual name, resulting in a
+filename like 'progress\-linux.conf').
 .PP
 設定ファイルの実際の内容は以下の変数 (群) で構成されます。
 
@@ -216,10 +236,12 @@ live/config.conf.d/*.conf)
 /usr/share/doc/live\-config/examples にあります。
 
 .SS 既存の設定構成要素の削除
-独自に改変した \fBlive\-config\fP パッケージの作成や dpkg\-divert
-の利用を要求せずに健全な方法で構成要素自体を実際に削除することは今のところできません。しかし、上記で説明した
-live\-config.nocomponents
-の仕組みにより該当する構成要素を無効にすれば同じことが実現できます。無効にする構成要素を常にブートパラメータから指定しないといけないということを避けるためには、上記で説明した設定ファイルを使うようにしてください。
+It is not really possible to remove components itself in a sane way yet
+without requiring either to ship a locally modified \fBlive\-config\fP package
+or using dpkg\-divert. However, the same can be achieved by disabling the
+respective components through the live\-config.nocomponents mechanism, see
+above. To avoid to always need specifying disabled components through the
+boot parameter, a configuration file should be used, see above.
 .PP
 Live システム自体の設定ファイルは自分の Debian パッケージに配置するのが最善です。設定例を収録した見本のパッケージが
 /usr/share/doc/live\-config/examples にあります。
@@ -228,7 +250,8 @@ Live システム自体の設定ファイルは自分の Debian パッケージ�
 \fBlive\-config\fP では /lib/live/config 中の以下の構成要素が現在有効です。
 
 .IP \fBdebconf\fP 4
-Live メディアや http/ftp サーバに置かれた任意の preseed ファイルを適用します。
+allows one to apply arbitrary preseed files placed on the live media or an
+http/ftp server.
 .IP \fBhostname\fP 4
 /etc/hostname 及び /etc/hosts を設定します。
 .IP \fBuser\-setup\fP 4
@@ -298,7 +321,8 @@ xfce4\-panel をデフォルト設定にします。
 .IP \fBxscreensaver\fP 4
 画面をロックするスクリーンセーバーを無効にします。
 .IP \fBhooks\fP 4
-Live メディアや http/ftp サーバに置かれたファイルから任意の任意のコマンドを実行します。
+allows one to run arbitrary commands from a file placed on the live media or
+an http/ftp server.
 
 .SH ファイル
 .IP \fB/etc/live/config.conf\fP 4
