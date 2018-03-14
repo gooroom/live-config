@@ -1,3 +1,15 @@
+live-config (5.20170113) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [9e16c164] Merge Gooroom patches on debian/20170112
+  * [93356287] Modified LIVE_HOSTNAME and LIVE_USER_FULLNAME to Gooroom
+  * [cb22f3f4] Changed LIVE_USERNAME to gooroom in live-config-update
+  * [fe91ca0c] Copy the installer icon from "Desktop' to "바탕화면"
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Wed, 14 Mar 2018 12:13:41 +0900
+
 live-config (5.20170112) unstable; urgency=medium
 
   * Team upload.
