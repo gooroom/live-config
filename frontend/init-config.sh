@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Defaults
-LIVE_HOSTNAME="debian"
-LIVE_USERNAME="user"
-LIVE_USER_FULLNAME="Debian Live user"
+LIVE_HOSTNAME="gooroom"
+LIVE_USERNAME="gooroom"
+LIVE_USER_FULLNAME="Gooroom Live user"
 LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 export LIVE_HOSTNAME LIVE_USERNAME LIVE_USER_FULLNAME LIVE_USER_DEFAULT_GROUPS
 
