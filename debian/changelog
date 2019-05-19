@@ -1,12 +1,26 @@
-live-config (5.20180224+grm2u1) unstable; urgency=medium
+live-config (5.20190519) unstable; urgency=medium
 
-  [ jongkyung.woo ]
-  * [fd06fe5a] Merge Gooroom Patchset debian/5.20180224
-  * [51c9fe8f] Modified Vcs-Git URL in control
+  * Downgrade compat back to 11, re-add debian/compat
 
-  [ Gooroom Autobuilder ]
+ -- Jonathan Carter <jcc@debian.org>  Sun, 19 May 2019 10:56:46 +0200
 
- -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 03 Dec 2019 10:43:16 +0900
+live-config (5.20190507) unstable; urgency=medium
+
+  * Disable systemd NSS module during live-config. Closes: #928840
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Mon, 13 May 2019 11:29:40 +0200
+
+live-config (5.20190312) unstable; urgency=medium
+
+  * Update compat to debhelper-compat (= 12)
+    - Use dh_missing instead of 'dh_install --fail-missing'
+    - Rename no-restart-on-upgrade to no-stop-on-upgrade
+  * Upgrade standards version to 4.3.0
+  * Add self to uploaders
+  * Integrate patch to select desktop environments for SDDM
+    (Closes: #921921)
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 11 Mar 2019 12:15:09 +0000
 
 live-config (5.20180224) unstable; urgency=medium
 

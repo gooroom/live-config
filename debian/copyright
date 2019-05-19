@@ -1,11 +1,10 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: live-config
-Upstream-Contact: gooroom <gooroom@gooroom.kr>
-Source: https://github.com/gooroom/live-config
+Upstream-Contact: Live Systems Project <debian-live@lists.debian.org>
+Source: http://live-systems.org/archive/packages/live-config/
 
 Files: *
 Copyright: 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
-Copyright: 2015-2019 gooroom <gooroom@gooroom.kr>
 License: GPL-3+
 
 License: GPL-3+
