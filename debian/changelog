@@ -1,3 +1,13 @@
+live-config (5.20180224+grm2u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [fd06fe5a] Merge Gooroom Patchset debian/5.20180224
+  * [51c9fe8f] Modified Vcs-Git URL in control
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 03 Dec 2019 10:43:16 +0900
+
 live-config (5.20180224) unstable; urgency=medium
 
   [ Steve McIntyre ]
