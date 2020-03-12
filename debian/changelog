@@ -1,3 +1,13 @@
+live-config (5.20190519+grm2u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [331b3d84] Merge Gooroom Patchset debian/5.20190519
+  * [dc1ff437] Disabled 1040-gnome-screensaver
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 12 Mar 2020 14:13:24 +0900
+
 live-config (5.20190519) unstable; urgency=medium
 
   * Downgrade compat back to 11, re-add debian/compat
