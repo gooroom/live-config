@@ -44,6 +44,6 @@ Config ()
 	touch /var/lib/live/config/gnome-screensaver
 }
 
-Cmdline
-Init
-Config
+#Cmdline
+#Init
+#Config
