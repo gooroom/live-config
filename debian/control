@@ -1,5 +1,6 @@
 Source: live-config
-Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
+Maintainer: gooroom <gooroom@gooroom.kr>
+XSBC-Original-Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
 Uploaders: Iain R. Learmonth <irl@debian.org>,
            Raphaël Hertzog <hertzog@debian.org>,
            Jonathan Carter <jcc@debian.org>
@@ -8,9 +9,9 @@ Priority: optional
 Build-Depends: debhelper (>= 11)
 Build-Depends-Indep: lsb-release
 Standards-Version: 4.3.0
-Vcs-Browser: https://salsa.debian.org/live-team/live-config
-Vcs-Git: https://salsa.debian.org/live-team/live-config.git
-Homepage: https://debian-live.alioth.debian.org/live-config/
+Vcs-Browser: https://github.com/gooroom/live-config
+Vcs-Git: https://github.com/gooroom/live-config.git
+Homepage: https://www.gooroom.kr
 
 Package: live-config
 Architecture: all
