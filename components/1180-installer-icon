@@ -3,36 +3,49 @@
 ## (c) 2014 Frédéric Gaudet. Based on :
 ## live-config(7) - System Configuration Scripts
 ## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2021 Jongkyung woo <jkwoo@gooroom.kr>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
 ## under certain conditions; see COPYING for details.
 
-Installer_icon()
+Cmdline ()
 {
-    if [ -e /usr/share/applications/debian-installer-launcher.desktop ]; then
-        if grep -qs ko_KR /etc/default/locale
-        then
-            if [ ! -e /home/${LIVE_USERNAME}/바탕화면 ]; then
-                mkdir -p /home/${LIVE_USERNAME}/바탕화면
-            fi
-
-            cp /usr/share/applications/debian-installer-launcher.desktop /home/${LIVE_USERNAME}/바탕화면/debian-installer-launcher.desktop
-            chmod 755 /home/${LIVE_USERNAME}/바탕화면/debian-installer-launcher.desktop
-            chown ${LIVE_USERNAME}:${LIVE_USERNAME} "/home/${LIVE_USERNAME}/바탕화면" -R
-        else
-            if [ ! -e /home/${LIVE_USERNAME}/Desktop ]; then
-                mkdir -p /home/${LIVE_USERNAME}/Desktop
-            fi
-
-            cp /usr/share/applications/debian-installer-launcher.desktop /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
-            chmod 755 /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
-            chown ${LIVE_USERNAME}:${LIVE_USERNAME} "/home/${LIVE_USERNAME}/Desktop" -R
-        fi
-    fi
-
-    # Creating state file
-    touch /var/lib/live/config/installer-icon
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.locales=*|locales=*)
+			LIVE_LOCALES="${_PARAMETER#*locales=}"
+			;;
+		esac
+	done
 }
 
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/gooroom-guide.list ] || \
+	   [ -e /var/lib/live/config/gooroom-guide ]
+	then
+		exit 0
+	fi
+
+	echo -n "Installer_icon"
+}
+
+Installer_icon()
+{
+	DESKTOP_FILE=debian-installer-launcher.desktop
+	if [ -e /usr/share/applications/$DESKTOP_FILE ]
+	then
+		sudo -u "${LIVE_USERNAME}" sh -c "umask 0077 && mkdir -p /home/${LIVE_USERNAME}/Desktop && sed -e's/Exec=su.*$/Exec=sudo \/usr\/bin\/live-installer/' /usr/share/applications/${DESKTOP_FILE} > /home/${LIVE_USERNAME}/Desktop/${DESKTOP_FILE}"
+	fi
+
+	# Creating state file
+	touch /var/lib/live/config/installer-icon
+}
+
+Cmdline
+Init
 Installer_icon
