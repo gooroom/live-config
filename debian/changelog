@@ -1,3 +1,13 @@
+live-config (5.20210401+grm2u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [20b2f5b0] [FIXME] 1040-gnome-screensaver
+  * [4076f3d7] Add to norun the gooroom-guide and create the installer icon
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 01 Apr 2021 12:25:15 +0900
+
 live-config (5.20190519+grm2u1) unstable; urgency=medium
 
   [ jongkyung.woo ]
