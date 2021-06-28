@@ -1,4 +1,5 @@
 .\" live-config(7) - System Configuration Components
+.\" Copyright (C) 2016-2020 The Debian Live team
 .\" Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -6,7 +7,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2015\-09\-23 5.0~a5-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2015\-09\-23 5.0~a5-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Components
@@ -77,7 +78,7 @@ Allows one to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.wlan\-driver\fR=\fIWLAN_DRIVER\fR | \fBwlan\-driver\fR=\fIWLAN_DRIVER\fR" 4
 Allows one to set WLAN driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/broadcom-sta/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
-Allows one to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live-systems.org/other/hooks\fR>.
+Allows one to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/.
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
@@ -273,10 +274,10 @@ allows one to run arbitrary commands from a file placed on the live media or an 
 \fIlive\-tools\fR(7)
 
 .SH HOMEPAGE
-More information about live\-config and the Live Systems project can be found on the homepage at <\fIhttp://live-systems.org/\fR> and in the manual at <\fIhttp://live-systems.org/manual/\fR>.
+More information about live\-config and the Debian Live project can be found on the homepage at <\fIhttps://wiki.debian.org/DebianLive\fR> and in the manual at <\fIhttps://live-team.pages.debian.net/live-manual/\fR>.
 
 .SH BUGS
-Bugs can be reported by submitting a bugreport for the live\-config package in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fR> or by writing a mail to the Live Systems mailing list at <\fIdebian\-live@lists.debian.org\fR>.
+Bugs can be reported by submitting a bugreport for the live\-config package in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fR> or by writing a mail to the Debian Live mailing list at <\fIdebian\-live@lists.debian.org\fR>.
 
 .SH AUTHOR
-live\-config was written by Daniel Baumann <\fImail@daniel-baumann.ch\fR>.
+live\-config was originally written by Daniel Baumann <\fImail@daniel-baumann.ch\fR>. Since 2016 development has been continued by the Debian Live team.

@@ -1,4 +1,5 @@
 .\" live-config(7) - System Configuration Components
+.\" Copyright (C) 2016-2020 The Debian Live team
 .\" Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -11,7 +12,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2015\-09\-23 5.0~a5\-1 "Progetto Live Systems"
+.TH LIVE\-CONFIG 7 2015\-09\-23 5.0~a5\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Componenti di configurazione del sistema
@@ -137,8 +138,7 @@ URLs must be fetchable by wget (http, ftp or file://), the files are
 executed in /tmp of the running live system, and that the files needs their
 dependencies, if any, already installed, e.g. if a python script should be
 executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
-<\fIhttp://live\-systems.org/other/hooks\fP>.
+use\-cases are available at /usr/share/doc/live\-config/examples/hooks/.
 .br
 Se il file è posizionato sul supporto live, questo  può essere prelevato con
 file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP se è nella
@@ -400,8 +400,8 @@ an http/ftp server.
 
 .SH HOMEPAGE
 Si possono trovare ulteriori informazioni su live\-config e il progetto Live
-Systems sulla homepage <\fIhttp://live\-systems.org/\fP> e nel manuale
-all'indirizzo <\fIhttp://live\-systems.org/manual/\fP>.
+Systems sulla homepage <\fIhttps://wiki.debian.org/DebianLive\fP> e nel manuale
+all'indirizzo <\fIhttps://live-team.pages.debian.net/live-manual/\fP>.
 
 .SH BUG
 I bug possono essere segnalati presentando un bugreport per il pacchetto
@@ -410,5 +410,4 @@ live\-config sul Bug Tracking System all'indirizzo
 di Live Sistems <\fIdebian\-live@lists.debian.org\fP>.
 
 .SH AUTORE
-live\-config è stato scritto da Daniel Baumann
-<\fImail@daniel\-baumann.ch\fP>.
+live\-config was originally written by Daniel Baumann <\fImail@daniel-baumann.ch\fR>. Since 2016 development has been continued by the Debian Live team.

@@ -1,4 +1,5 @@
 .\" live-config(7) - System Configuration Components
+.\" Copyright (C) 2016-2020 The Debian Live team
 .\" Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -120,8 +121,7 @@ URLs must be fetchable by wget (http, ftp or file://), the files are
 executed in /tmp of the running live system, and that the files needs their
 dependencies, if any, already installed, e.g. if a python script should be
 executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
-<\fIhttp://live\-systems.org/other/hooks\fP>.
+use\-cases are available at /usr/share/doc/live\-config/examples/hooks/.
 .br
 ファイルが Live メディア上にある場合は file:///lib/live/mount/medium/\fIファイル\fP、Live
 システム自体のルートファイルシステムにある場合は file:///\fIファイル\fP で取得できます。
@@ -348,8 +348,8 @@ an http/ftp server.
 
 .SH ホームページ
 live\-config 及び Live
-システムプロジェクトについてのさらなる情報は、<\fIhttp://live\-systems.org/\fP> のホームページや
-<\fIhttp://live\-systems.org/manual/\fP> のマニュアルにあります。
+システムプロジェクトについてのさらなる情報は、<\fIhttps://wiki.debian.org/DebianLive\fP> のホームページや
+<\fIhttps://live-team.pages.debian.net/live-manual/\fP> のマニュアルにあります。
 
 .SH バグ
 バグは <\fIhttp://bugs.debian.org/\fP> にあるバグ追跡システムに live\-config
@@ -357,5 +357,4 @@ live\-config 及び Live
 システムのメーリングリスト宛てにメールを書くことにより報告できます。
 
 .SH 作者
-live\-config は Daniel Baumann さん <\fImail@daniel\-baumann.ch\fP>
-により書かれました。
+live\-config was originally written by Daniel Baumann <\fImail@daniel-baumann.ch\fR>. Since 2016 development has been continued by the Debian Live team.

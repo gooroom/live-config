@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Components
+## Copyright (C) 2016-2020 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -35,9 +36,9 @@ case "${_DISTRIBUTION}" in
 	debian)
 		NOCOMPONENT="apport"
 
-		LIVE_HOSTNAME="gooroom"
-		LIVE_USERNAME="gooroom"
-		LIVE_USER_FULLNAME="Gooroom Live user"
+		LIVE_HOSTNAME="debian"
+		LIVE_USERNAME="user"
+		LIVE_USER_FULLNAME="Debian Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 
 		PROC_OPTIONS="onodev,noexec,nosuid"
@@ -47,24 +48,12 @@ case "${_DISTRIBUTION}" in
 		NOCOMPONENT="apport"
 
 		LIVE_HOSTNAME="system"
-		LIVE_USERNAME="gooroom"
+		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
 
 		PROC_OPTIONS="onodev,noexec,nosuid,hidepid=2"
 		;;
-
-	*)
-		NOCOMPONENT="apport"
-
-		LIVE_HOSTNAME="gooroom"
-		LIVE_USERNAME="gooroom"
-		LIVE_USER_FULLNAME="Gooroom Live user"
-		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
-
-		PROC_OPTIONS="onodev,noexec,nosuid"
-		;;
-
 esac
 
 echo "Removing unused components for ${_DISTRIBUTION} (${_RELEASE})..."

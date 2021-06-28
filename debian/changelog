@@ -1,22 +1,42 @@
-live-config (5.20210401+grm2u1) unstable; urgency=medium
+live-config (11.0.3) unstable; urgency=medium
 
-  [ jongkyung.woo ]
-  * [20b2f5b0] [FIXME] 1040-gnome-screensaver
-  * [4076f3d7] Add to norun the gooroom-guide and create the installer icon
+  * Integrate patch to fix kde plasma desktop auto-login,
+    thanks Leszek Lesner (Closes: #990390)
 
-  [ Gooroom Autobuilder ]
+ -- Jonathan Carter <jcc@debian.org>  Mon, 28 Jun 2021 11:43:41 +0200
 
- -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 01 Apr 2021 12:25:15 +0900
+live-config (11.0.2) unstable; urgency=medium
 
-live-config (5.20190519+grm2u1) unstable; urgency=medium
+  [ Raphaël Hertzog ]
+  * Drop Iain R. Learmonth from Uploaders on his request (Closes: #970287)
+  * Drop undesired leading 'o' in mount options
+  * Use dpkq-query instead of looking into /var/lib/dpkg/info/
+    (Closes: #944980)
+  * Revert "Drop the xfce4-panel hook, no longer needed."
+  * Add user to the sudo group for better integration
+  * Update the example to avoid direct access to dpkg's database
+  * Update my email in the Uploaders field
+  * Update the lintian override for a renamed tag
+  * Bump Standards-Version to 4.5.1
+  * Extend lintian override for live-config-systemd
 
-  [ jongkyung.woo ]
-  * [331b3d84] Merge Gooroom Patchset debian/5.20190519
-  * [dc1ff437] Disabled 1040-gnome-screensaver
+  [ Unit 193 ]
+  * Disable the xfce4-panel component if >= 4.16 is installed.
 
-  [ Gooroom Autobuilder ]
+ -- Raphaël Hertzog <raphael@offensive-security.com>  Fri, 08 Jan 2021 14:46:43 +0100
 
- -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 12 Mar 2020 14:13:24 +0900
+live-config (11.0.1) unstable; urgency=medium
+
+  * Bump version number to same version of Debian development release
+  * Document changes made in git that are not represented in changelog:
+    - Document home page in debian/control
+    - Use secure copyright file specification URI
+    - Bump debhelper from 11 to 12
+    - Set debhelper-compat version in Build-Depends
+    - Update copyright headers and URLs
+    - Fix package descriptions to reflect team name
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 08 Apr 2020 11:10:48 +0200
 
 live-config (5.20190519) unstable; urgency=medium
 
@@ -113,7 +133,7 @@ live-config (5.20170112) unstable; urgency=medium
     installed. It's harmful when we use the kernel driver. Closes: #831384
     Thanks to intrigeri and Rohan Garg.
   * Use dbus-run-session instead of dbus-launch to run gsettings. Thanks
-    to Simon McVittie for the report. Closes: #836102 
+    to Simon McVittie for the report. Closes: #836102
   * Support xorg-driver=noproprietary to not override Xorg's auto-detection
     of the driver (live-config does that by default for cards supported by the
     fglrx/nvidia drivers if they are installed). Thanks to Wolfgang Scheicher

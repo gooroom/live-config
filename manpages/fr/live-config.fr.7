@@ -1,4 +1,5 @@
 .\" live-config(7) - System Configuration Components
+.\" Copyright (C) 2016-2020 The Debian Live team
 .\" Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -11,7 +12,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 23.09.2015 5.0~a4\-1 "Projet Live Systems"
+.TH LIVE\-CONFIG 7 23.09.2015 5.0~a4\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Composants de configuration du système
@@ -140,8 +141,7 @@ URLs must be fetchable by wget (http, ftp or file://), the files are
 executed in /tmp of the running live system, and that the files needs their
 dependencies, if any, already installed, e.g. if a python script should be
 executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
-<\fIhttp://live\-systems.org/other/hooks\fP>.
+use\-cases are available at /usr/share/doc/live\-config/examples/hooks/.
 .br
 Si le fichier est placé dans le dispositif live, il peut être utilisé avec
 file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
@@ -408,17 +408,16 @@ an http/ftp server.
 \fIlive\-tools\fP(7)
 
 .SH "PAGE D'ACCUEIL"
-Davantage d'informations sur live\-config et le project Live Systems peuvent
-être trouvées sur la page <\fIhttp://live\-systems.org/\fP> et dans le
-manuel sur <\fIhttp://live\-systems.org/manual/\fP>.
+Davantage d'informations sur live\-config et le project Debian Live peuvent
+être trouvées sur la page <\fIhttps://wiki.debian.org/DebianLive\fP> et dans le
+manuel sur <\fIhttps://live-team.pages.debian.net/live-manual/\fP>.
 
 .SH BOGUES
 Les bogues peuvent être signalés en soumettant un rapport de bogue à propos
 du paquet live\-config dans le système de gestion des bogues sur
 <\fIhttp://bugs.debian.org/\fP> ou en envoyant un courrier électronique
-à la liste de diffusion Live Systems à
+à la liste de diffusion Debian Live à
 <\fIdebian\-live@lists.debian.org\fP>
 
 .SH AUTEUR
-live\-config a été écrit par Daniel Baumann
-<\fImail@daniel\-baumann.ch\fP>.
+live\-config was originally written by Daniel Baumann <\fImail@daniel-baumann.ch\fR>. Since 2016 development has been continued by the Debian Live team.
