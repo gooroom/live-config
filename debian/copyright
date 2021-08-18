@@ -1,9 +1,11 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: live-config
 Upstream-Contact: Debian Live Project <debian-live@lists.debian.org>
+Source: https://github.com/gooroom/live-config
 
 Files: *
 Copyright:
+ 2015-2021 gooroom <gooroom@gooroom.kr>
  2016-2020 The Debian Live team
  2016-2017 Raphaël Hertzog <hertzog@debian.org>
  2006-2015 Daniel Baumann <mail@daniel-baumann.ch>

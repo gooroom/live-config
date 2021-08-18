@@ -40,13 +40,15 @@ Init ()
 
 Config ()
 {
+	LIVE_USERNAME=gooroom
+
 	# Disabling to lock the screen when the screensaver goes active.
-	sudo -u "${LIVE_USERNAME}" dbus-run-session -- gsettings set org.gnome.desktop.screensaver lock-enabled false
+	sudo -u "${LIVE_USERNAME}" DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus" -- gsettings set org.gnome.desktop.screensaver lock-enabled false
 
 	# Creating state file
 	touch /var/lib/live/config/gnome-screensaver
 }
 
-Cmdline
-Init
-Config
+#Cmdline
+#Init
+#Config

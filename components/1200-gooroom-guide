@@ -1,10 +1,8 @@
 #!/bin/sh
 
-. /lib/live/config.sh
-
 ## live-config(7) - System Configuration Components
-## Copyright (C) 2016-2020 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
+## Copyright (C) 2021 Jongkyung Woo <jkwoo@gooroom.kr>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -19,8 +17,8 @@ Cmdline ()
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
-			live-config.timezone=*|timezone=*)
-				LIVE_TIMEZONE="${_PARAMETER#*timezone=}"
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;
 		esac
 	done
@@ -29,32 +27,26 @@ Cmdline ()
 Init ()
 {
 	# Checking if package is installed or already configured
-	if ! pkg_is_installed "tzdata" || \
-	   component_was_executed "tzdata"
+	if [ ! -e /var/lib/dpkg/info/gooroom-guide.list ] || \
+	   [ -e /var/lib/live/config/gooroom-guide ]
 	then
 		exit 0
 	fi
 
-	echo -n " tzdata"
+	echo -n " gooroom-guide"
 }
 
 Config ()
 {
-	if [ -n "${LIVE_TIMEZONE}" ]
+	if [ ! -e /home/${LIVE_USERNAME}/.config/gooroom/gooroom-guide/norun ]
 	then
-		_AREA="$(echo ${LIVE_TIMEZONE} | cut -f1 -d '/')"
-		_ZONE="$(echo ${LIVE_TIMEZONE} | cut -f2 -d '/')"
-	else
-		_AREA="Asia"
-		_ZONE="Seoul"
+		sudo -u "${LIVE_USERNAME}" sh -c "umask 0077 && mkdir -p /home/${LIVE_USERNAME}/.config/gooroom/gooroom-guide && cat > /home/${LIVE_USERNAME}/.config/gooroom/gooroom-guide/norun" << EOF
+live-installer: norun
+EOF
 	fi
 
-	echo "${_AREA}/${_ZONE}" > /etc/timezone
-	rm -f /etc/localtime
-	dpkg-reconfigure -f noninteractive -p critical tzdata
-
 	# Creating state file
-	touch /var/lib/live/config/tzdata
+	touch /var/lib/live/config/gooroom-guide
 }
 
 Cmdline
