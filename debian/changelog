@@ -1,3 +1,10 @@
+live-config (11.0.3+grm3u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [be4ee91d] Merged Gooroom Patchset debian/11.0.3
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sat, 04 Dec 2021 12:52:31 +0900
+
 live-config (11.0.3) unstable; urgency=medium
 
   * Integrate patch to fix kde plasma desktop auto-login,
